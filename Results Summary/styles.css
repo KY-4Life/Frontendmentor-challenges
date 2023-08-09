@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+/* Colors */
+--White: hsl(0, 0%, 100%);
+--Pale-blue: hsl(221, 100%, 96%);
+--Light-lavender: hsl(241, 100%, 89%);
+--Dark-gray: hsl(224, 26%, 29%);
+
+/* Gradients */
+    /* backgrounds */
+--slate-blue : hsl(252, 100%, 67%);
+--royal-blue : hsl(241, 81%, 54%);
+
+    /* circle */
+--Violet-blue : hsla(256, 72%, 46%, 1);
+--Persian-blue : hsla(241, 72%, 46%, 0);
+
+/* Background Colors */
+--Light-red: hsl(0, 100%, 67%);
+--Orangey-yellow: hsl(39, 100%, 56%);
+--Green-teal: hsl(166, 100%, 37%);
+--Cobalt-blue: hsl(234, 85%, 45%);
+}
+
+body{font-family: 'Hanken Grotesk', sans-serif ;}
+
+/* The top Purple box */
+.purple{
+    border-radius: 0 0 2rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top,var(--royal-blue), var(--slate-blue));
+    color: var(--Light-lavender);
+}
+
+/* "Your Result" */
+.purple .top{
+    font-size: .9rem;
+    padding: 1rem;
+    font-weight: 600;
+}
+
+/* The Circle */
+.circle{
+    /* outline: 1px solid; */
+    padding: 1.3rem;
+    width: 7.5rem;
+    border-radius: 50%;
+    background-image: linear-gradient(to top,var(--Persian-blue), var(--Violet-blue) );
+}
+
+/* 76 */
+.x-large{
+    font-size: 2rem;
+    display: block;
+    font-size: 2.75rem;
+    color: var(--White);
+    font-weight: 800;
+}
+
+/* the "great" part */
+.large{
+    /* outline: 1px solid; */
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--White);
+    padding: 0 1rem .5rem;
+}
+
+/* "You scored higher... */
+.purple .bottom {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 0.85rem;
+}
+
+/* The bottom white of the project */
+.summary{
+    margin: 1rem auto;
+    padding: .5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+    max-width: 330px;
+}
+
+.summary p{
+    color: var(--Dark-gray);
+}
+
+/* The individual boxes */
+.results{
+    padding: .7rem;
+    margin: 0 .7rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--Dark-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    max-width: 290px;
+}
+
+/* Setting the colors for the results */
+.red{
+    color: var(--Light-red);
+}
+.yellow{
+    color: var(--Orangey-yellow);
+}
+.teal{
+    color: var(--Green-teal);
+}
+.blue{
+    color: var(--Cobalt-blue);
+}
+
+/* Fixing a position BUG */
+.red, .yellow, .teal, .blue{
+    position: relative;
+    top: -5px;
+}
+
+/* Setting the result backgrounds */
+.light-red{
+    background-color: hsl(0, 100%, 95.5%);
+}
+.light-yellow{
+    background-color: hsl(39, 100%, 92%);
+}
+.light-green{
+    background-color: hsl(166, 100%, 94%);
+}
+.light-blue{
+    background-color: hsl(234, 85%, 94%);
+}
+
+/* The big button */
+button{
+    max-width: 290px;
+    font-family: inherit;
+    margin: 1.1rem;
+    padding: .75rem 1rem;
+    border-radius: 30px;
+    border: 1px solid;
+    background-color: var(--Dark-gray);
+    font-weight: 600;
+    color: var(--White);
+    font-size: .9rem;
+}
+
+/* Button Color Changes */
+button:is(:hover, :active){
+    background-color: var(--royal-blue);
+    color: var(--White);
+}
+
+/* Making EVERYTHING responsive */
+@media screen and (min-width:420px) {
+    .summary{
+        max-width: 370px;
+    }
+    .results{
+        max-width: 330px;
+    }
+    button{
+        margin: 1.1rem auto;
+        padding: 1rem 7rem;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .purple{
+        max-width: 475px;
+        margin: 0rem auto;
+        transform: scale(1.1);
+    }
+    .summary{
+        margin-top: 3.5rem;
+        transform: scale(1.1);
+    }
+}
+
+@media screen and (min-width:924px) {
+    main{
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .summary{
+        margin-left: 2rem;
+    }
+
+    .purple{
+        min-height: 390px;
+        max-width: 275px;
+        margin-right: 1rem;
+        border-radius: 2rem;
+    }
+}
